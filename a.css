@@ -23,13 +23,26 @@ body {
   touch-action: none;
 }
 
+/* Update these in a.css */
 .scr {
   display: none;
-  position: absolute;
+  position: fixed; /* Changed from absolute for better mobile stability */
   inset: 0;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Center content vertically */
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#mCvs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfectly centers the canvas */
+  pointer-events: none;
+  z-index: 1;
 }
 
 .scr.on {
